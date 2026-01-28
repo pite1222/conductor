@@ -22,6 +22,7 @@
 // 非マウスキーでAML解除
 &zip_temp_layer {
     excluded-positions = <
+        16 // J
         17 // K
         18 // L
     >;
@@ -37,6 +38,11 @@
         input-processors = <&zip_temp_layer 4 100000>; // AML
 
     };
+};
+
+// クリック後の AML 解除
+&mkp_input_listener {
+    input-processors = <&zip_temp_layer 4 200>;
 };
 
 &pinctrl {
